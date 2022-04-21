@@ -13,6 +13,11 @@ public class PersonaServiceImpl implements PersonaService{
         return persona.getNombre();
     }
 
+    public String getCiudad()
+    {
+        return persona.getCiudad();
+    }
+
     public int getEdad()
     {
         return persona.getEdad();
@@ -26,5 +31,12 @@ public class PersonaServiceImpl implements PersonaService{
     public String toString()
     {
         return persona.toString();
+    }
+
+    public void instanciar(String nombre, int edad, String ciudad)
+    {
+        persona.setNombre(nombre);
+        persona.setEdad(edad);
+        persona.setCiudad(ciudad);
     }
 }

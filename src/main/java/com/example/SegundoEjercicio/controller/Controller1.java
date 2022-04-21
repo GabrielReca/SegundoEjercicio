@@ -2,6 +2,7 @@ package com.example.SegundoEjercicio.controller;
 
 import com.example.SegundoEjercicio.clases.Ciudad;
 import com.example.SegundoEjercicio.clases.Persona;
+import com.example.SegundoEjercicio.service.PersonaService;
 import com.example.SegundoEjercicio.service.PersonaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,10 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller1 {
 
+    @Autowired
+    PersonaService personaService;
+
     @PostMapping("/introducirPersona")
-    public String introducirPersona(@RequestBody PersonaServiceImpl personaServiceImpl)
+    public String introducirPersona(@RequestBody Persona persona)
     {
-        return personaServiceImpl.toString();
+        personaService.instanciar(persona.getNombre(), persona.getEdad(), persona.getCiudad());
+        return persona.toString();
     }
 
   /*  @PostMapping("/addCiudad")
