@@ -3,7 +3,6 @@ package com.example.SegundoEjercicio.service;
 import com.example.SegundoEjercicio.clases.Persona;
 import org.springframework.stereotype.Service;
 
-@Service
 public class PersonaServiceImpl implements PersonaService{
 
     Persona persona = new Persona();
